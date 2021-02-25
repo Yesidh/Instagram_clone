@@ -1,17 +1,18 @@
 """File views to instagramclone"""
 
-#Django
+# Django
 from django.http import HttpResponse
 import json
-#Utilities
+# Utilities
 from datetime import datetime
 
 
 def hello_world(request):
     """retorna un saludo"""
     now = datetime.now()
-    #import pdb; pdb.set_trace()
+    # import pdb; pdb.set_trace()
     return HttpResponse('Oh, hi! the Current server time is {now}'.format(now=str(now)))
+
 
 def sort_integers(request):
     """return a Json with sorted integers"""
@@ -23,6 +24,7 @@ def sort_integers(request):
         'message': 'Integers sorted susccesfully.'
     }
     return HttpResponse(json.dumps(data, indent=4), content_type='application/json')
+
 
 def hi(request, name, age):
     """check parameter age > 12 year old"""

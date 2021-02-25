@@ -1,14 +1,20 @@
 """Modulo URL del instagramclone"""
 
+# Django
+from django.contrib import admin
 from django.urls import path
 
-from instagramclone import views
-
-
+# local
+from instagramclone import views as local_views
+from posts import views as posts_views
 
 
 urlpatterns = [
-    path('hello-world/', views.hello_world),
-    path('sort/', views.sort_integers),
-    path('hi/<str:name>/<int:age>/', views.hi),
+    path('admin/', admin.site.urls),
+
+    path('hello-world/', local_views.hello_world),
+    path('sort/', local_views.sort_integers),
+    path('hi/<str:name>/<int:age>/', local_views.hi),
+
+    path('posts/', posts_views.list_posts)
 ]
