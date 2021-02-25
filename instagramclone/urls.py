@@ -10,4 +10,5 @@ from instagramclone import views
 urlpatterns = [
     path('hello-world/', views.hello_world),
     path('sort/', views.sort_integers),
+    path('hi/<str:name>/<int:age>/', views.hi),
 ]

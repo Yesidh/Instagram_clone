@@ -23,3 +23,11 @@ def sort_integers(request):
         'message': 'Integers sorted susccesfully.'
     }
     return HttpResponse(json.dumps(data, indent=4), content_type='application/json')
+
+def hi(request, name, age):
+    """check parameter age > 12 year old"""
+    if age < 12:
+        message = "Sorry, {} you are so young".format(name)
+    else:
+        message = "Hello {} welcome to instagramclone".format(name)
+    return HttpResponse(message)
