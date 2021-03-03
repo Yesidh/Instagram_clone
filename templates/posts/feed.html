@@ -5,11 +5,11 @@
 {% endblock %}
 
 {% block container %}
-    <div class="row">
+    <div class="row mt-10">
         {% for post in posts %}
         <div class="col-lg-4 offset-lg-4">
             <div class="media">
-                <img class="mr-3 rounded-circle" src="{{ post.user.picture }}" alt="{{ post.user.name }}">
+                <img class="mr-3 rounded-circle" src="{{ post.user.picture }}" alt="{{ post.user.name }}" height="60">
                 <div class="media-body">
                     <h5 class="mt-0">{{ post.user.name }}</h5>
                     {{ post.timestamp }}

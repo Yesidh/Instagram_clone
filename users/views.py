@@ -20,8 +20,6 @@ def update_profile(request):
     """Updates a users profile view."""
 
     profile = request.user.profile
-    form = ProfileForm()
-
     if request.method == 'POST':
         form = ProfileForm(request.POST, request.FILES)
         if form.is_valid():
@@ -34,8 +32,9 @@ def update_profile(request):
             profile.save()
 
             return redirect('update_profile')
-        else:
-            form = ProfileForm()
+    else:
+        form = ProfileForm()
+
     return render(request=request,
                   template_name='users/update_profile.html',
                   context={
