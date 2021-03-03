@@ -13,6 +13,10 @@ from users.models import Profile
 from django.db.utils import IntegrityError
 
 
+def update_profile(request):
+    """Updates a users profile view."""
+    return render(request, 'users/update_profile.html')
+
 def login_view(request):
     """Login view"""
     # import pdb; pdb.set_trace()
