@@ -16,6 +16,7 @@ from django.db.utils import IntegrityError
 from users.forms import ProfileForm
 
 
+@login_required
 def update_profile(request):
     """Updates a users profile view."""
 
